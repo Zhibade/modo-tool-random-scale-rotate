@@ -24,8 +24,13 @@ ROT_LIMITS_X = [query_user_value('zbRandScaleRot_rotMinX'), query_user_value('zb
 ROT_LIMITS_Y = [query_user_value('zbRandScaleRot_rotMinY'), query_user_value('zbRandScaleRot_rotMaxY')]
 ROT_LIMITS_Z = [query_user_value('zbRandScaleRot_rotMinZ'), query_user_value('zbRandScaleRot_rotMaxZ')]
 
+TRANSLATE_LIMITS_X = [query_user_value('zbRandScaleRot_translateMinX'), query_user_value('zbRandScaleRot_translateMaxX')]
+TRANSLATE_LIMITS_Y = [query_user_value('zbRandScaleRot_translateMinY'), query_user_value('zbRandScaleRot_translateMaxY')]
+TRANSLATE_LIMITS_Z = [query_user_value('zbRandScaleRot_translateMinZ'), query_user_value('zbRandScaleRot_translateMaxZ')]
+
 APPLY_SCALE = query_user_value('zbRandScaleRot_scale')
 APPLY_ROTATION = query_user_value('zbRandScaleRot_rotate')
+APPLY_TRANSLATE = query_user_value('zbRandScaleRot_translate')
 
 UNIFORM_SCALE = query_user_value('zbRandScaleRot_uniformScale')
 
@@ -93,6 +98,15 @@ def random_transform():
         lx.eval("transform.channel rot.X {0}".format(rot_x))
         lx.eval("transform.channel rot.Y {0}".format(rot_y))
         lx.eval("transform.channel rot.Z {0}".format(rot_z))
+
+    if APPLY_TRANSLATE:
+        translate_x = random.uniform(TRANSLATE_LIMITS_X[0], TRANSLATE_LIMITS_X[1])
+        translate_y = random.uniform(TRANSLATE_LIMITS_Y[0], TRANSLATE_LIMITS_Y[1])
+        translate_z = random.uniform(TRANSLATE_LIMITS_Z[0], TRANSLATE_LIMITS_Z[1])
+
+        lx.eval("transform.channel pos.X {0}".format(translate_x))
+        lx.eval("transform.channel pos.Y {0}".format(translate_y))
+        lx.eval("transform.channel pos.Z {0}".format(translate_z))
 
 
 def transform_polygon_islands():
