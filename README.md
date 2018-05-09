@@ -1,4 +1,4 @@
-# MODO Tool - Random Rotate & Scale
+# MODO Tool - Random Transform
 ## Overview
 MODO tool that allows the user to randomly transform selected meshes for quickly adding variation to 
 patterns or repetitive shapes.
@@ -14,7 +14,7 @@ It supports uniform scaling or per-axis scaling, as well as customizing the pivo
 - Restart MODO
 
 ## How to Use
-- A *Random Rotate & Scale* button will appear on the *Model* layout, *Basic* tab. (You can change this through the form editor)
+- A *Random Transform* button will appear on the *Model* layout, *Basic* tab. (You can change this through the form editor)
 - Clicking that button will open the tool's form
 - Customize the settings as needed
 - Select all the Mesh Items that you wish to transform
